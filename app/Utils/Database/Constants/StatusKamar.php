@@ -3,5 +3,5 @@
 namespace App\Utils\Database\Constants;
 
 class StatusKamar {
-    const KOSONG = 'kosong';
+    const TERSEDIA = 'tersedia';
 }

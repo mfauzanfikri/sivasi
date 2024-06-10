@@ -26,7 +26,7 @@ class AddKamar extends Migration {
             'status' => [
                 'type' => 'VARCHAR',
                 'constraint' => 10,
-                'default' => StatusKamar::KOSONG
+                'default' => StatusKamar::TERSEDIA
             ]
         ];
 
