@@ -25,7 +25,6 @@ class AddUser extends Migration {
             'role' => [
                 'type' => 'VARCHAR',
                 'constraint' => 10,
-                'default' => Role::PEGAWAI
             ]
         ];
 

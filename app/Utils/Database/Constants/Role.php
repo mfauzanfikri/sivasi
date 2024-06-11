@@ -3,5 +3,6 @@
 namespace App\Utils\Database\Constants;
 
 class Role {
-    const PEGAWAI = 'pegawai';
+    const ADMIN = 'admin';
+    const MANAJER = 'manajer';
 }

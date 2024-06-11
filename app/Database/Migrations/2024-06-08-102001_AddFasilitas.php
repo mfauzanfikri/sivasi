@@ -15,7 +15,7 @@ class AddFasilitas extends Migration {
             ],
             'fasilitas' => [
                 'type' => 'VARCHAR',
-                'constraint' => 30,
+                'constraint' => 50,
             ]
         ];
 

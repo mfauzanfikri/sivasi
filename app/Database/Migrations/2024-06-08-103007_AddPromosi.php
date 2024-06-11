@@ -18,6 +18,10 @@ class AddPromosi extends Migration {
                 'constraint' => '12',
                 'unsigned' => true,
             ],
+            'kode_promosi' => [
+                'type' => 'VARCHAR',
+                'constraint' => 8
+            ],
             'potongan' => [
                 'type' => 'FLOAT',
                 'constraint' => 3,
