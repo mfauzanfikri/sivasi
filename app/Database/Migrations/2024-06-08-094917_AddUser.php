@@ -20,7 +20,7 @@ class AddUser extends Migration {
             ],
             'password' => [
                 'type' => 'VARCHAR',
-                'constraint' => 12,
+                'constraint' => 64,
             ],
             'role' => [
                 'type' => 'VARCHAR',

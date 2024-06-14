@@ -19,7 +19,7 @@ class AddPelanggan extends Migration {
             ],
             'password' => [
                 'type' => 'VARCHAR',
-                'constraint' => 12,
+                'constraint' => 64,
             ],
             'nama' => [
                 'type' => 'VARCHAR',
