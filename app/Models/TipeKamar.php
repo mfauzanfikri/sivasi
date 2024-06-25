@@ -13,6 +13,10 @@ class TipeKamar extends Model {
     protected $protectFields    = true;
     protected $allowedFields    = ['tipe', 'harga'];
 
+    protected array $casts      = [
+        'id_tipe_kamar' => 'int'
+    ];
+
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
 

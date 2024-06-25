@@ -13,6 +13,10 @@ class Kamar extends Model {
     protected $protectFields    = true;
     protected $allowedFields    = ['id_tipe_kamar', 'no_kamar', 'status'];
 
+    protected array $casts      = [
+        'id_kamar' => 'int'
+    ];
+
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
 

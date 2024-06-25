@@ -11,6 +11,10 @@ class FasilitasKamar extends Model {
     protected $protectFields    = true;
     protected $allowedFields    = ['id_tipe_kamar', 'id_fasilitas'];
 
+    protected array $casts      = [
+        'id_fasilitas_kamar' => 'int'
+    ];
+
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
 }

@@ -7,10 +7,6 @@ use CodeIgniter\Entity\Entity;
 use Error;
 
 class User extends Entity {
-    public function getData(): array {
-        return $this->attributes;
-    }
-
     /**
      * @param string $role App\Database\Constants\Role
      */

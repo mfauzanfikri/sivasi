@@ -13,6 +13,10 @@ class Fasilitas extends Model {
     protected $protectFields    = true;
     protected $allowedFields    = ['fasilitas'];
 
+    protected array $casts      = [
+        'id_fasilitas' => 'int'
+    ];
+
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
 

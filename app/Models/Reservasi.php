@@ -13,6 +13,10 @@ class Reservasi extends Model {
     protected $protectFields    = true;
     protected $allowedFields    = ['id_pelanggan', 'id_kamar', 'tanggal', 'lama', 'tanggal_datang', 'status'];
 
+    protected array $casts      = [
+        'id_reservasi' => 'int'
+    ];
+
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
 

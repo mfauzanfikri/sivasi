@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Entities\User as UserEntity;
 use CodeIgniter\Model;
 
 class User extends Model {
@@ -12,6 +13,8 @@ class User extends Model {
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = ['username', 'password', 'role'];
+
+    protected array $casts      = ['id_user' => 'int',];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
@@ -25,4 +28,8 @@ class User extends Model {
     protected $validationMessages   = [];
     protected $skipValidation       = false;
     protected $cleanValidationRules = true;
+
+    public function findUserByUsername(string $username): UserEntity|null {
+        return $this->where('username', $username)->first();
+    }
 }
