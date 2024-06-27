@@ -13,5 +13,7 @@ class DatabaseSeeder extends Seeder {
         $this->call('Promosi');
         $this->call('Fasilitas');
         $this->call('FasilitasKamar');
+        $this->call('Reservasi');
+        $this->call('Pembayaran');
     }
 }

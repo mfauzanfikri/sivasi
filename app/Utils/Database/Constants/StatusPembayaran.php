@@ -5,4 +5,5 @@ namespace App\Utils\Database\Constants;
 class StatusPembayaran {
     const PROSES = 'proses';
     const SELESAI = 'selesai';
+    const GAGAL = 'gagal';
 }

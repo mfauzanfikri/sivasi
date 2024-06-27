@@ -10,7 +10,7 @@ class Pelanggan extends BaseController {
         $modelPelanggan = new ModelPelanggan();
 
         $pelanggan = $modelPelanggan->findAll();
-        // dd($pelanggan);
+
         $data = [
             'title' => 'Data Pelanggan',
             'pelanggan' => $pelanggan

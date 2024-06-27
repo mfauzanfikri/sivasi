@@ -16,7 +16,10 @@
     <div class="row">
         <div class="col">
             <div class="card">
-                <p>Page</p>
+                <div class="card-body">
+                    <h2 class="card-title">title</h2>
+                    <p>content</p>
+                </div>
             </div>
         </div>
     </div>

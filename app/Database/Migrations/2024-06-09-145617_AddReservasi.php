@@ -31,8 +31,12 @@ class AddReservasi extends Migration {
                 'type' => 'INT',
                 'constraint' => 3,
             ],
-            'tanggal_datang' => [
+            'tanggal_checkin' => [
                 'type' => 'DATE'
+            ],
+            'tanggal_checkout' => [
+                'type' => 'DATE',
+                'null' => true
             ],
             'status' => [
                 'type' => 'VARCHAR',

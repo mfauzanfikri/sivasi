@@ -18,6 +18,22 @@
             </a>
         </li>
 
+        <!-- data reservasi -->
+        <li class="nav-item">
+            <a class="nav-link <?= !str_contains(uri_string(), 'dashboard/data-reservasi') ? 'collapsed' : '' ?>" href="/dashboard/data-reservasi">
+                <i class="bi bi-file-earmark-text"></i>
+                <span>Data Reservasi</span>
+            </a>
+        </li>
+
+        <!-- laporan -->
+        <li class="nav-item">
+            <a class="nav-link <?= uri_string() !== 'dashboard/laporan' ? 'collapsed' : '' ?>" href="/dashboard/laporan">
+                <i class="bi bi-list-columns"></i>
+                <span>Laporan</span>
+            </a>
+        </li>
+
         <!-- logout -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="">

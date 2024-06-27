@@ -14,7 +14,7 @@ class User extends Model {
     protected $protectFields    = true;
     protected $allowedFields    = ['username', 'password', 'role'];
 
-    protected array $casts      = ['id_user' => 'int',];
+    // protected array $casts      = ['id_user' => 'int'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

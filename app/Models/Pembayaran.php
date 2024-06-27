@@ -13,9 +13,9 @@ class Pembayaran extends Model {
     protected $protectFields    = true;
     protected $allowedFields    = ['id_reservasi', 'id_user', 'tanggal', 'jumlah', 'status', 'path_bukti_bayar'];
 
-    protected array $casts      = [
-        'id_pembayaran' => 'int'
-    ];
+    // protected array $casts      = [
+    //     'id_pembayaran' => 'int'
+    // ];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

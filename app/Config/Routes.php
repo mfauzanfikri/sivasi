@@ -17,5 +17,9 @@ $routes->group('dashboard', ['namespace' => 'App\Controllers\Dashboard'], static
     $routes->group('', ['filter' => 'auth'], static function (RouteCollection $routes) {
         $routes->get('', 'Home::index');
         $routes->get('data-pelanggan', 'Pelanggan::index');
+        $routes->get('data-reservasi', 'Reservasi::index');
+        $routes->get('data-reservasi/(:num)', 'Reservasi::detail/$1');
+        $routes->get('laporan', 'Laporan::index');
+        $routes->get('laporan/cetak', 'Laporan::cetak');
     });
 });

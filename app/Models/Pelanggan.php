@@ -13,9 +13,9 @@ class Pelanggan extends Model {
     protected $protectFields    = true;
     protected $allowedFields    = ['username', 'password', 'nama', 'alamat', 'no_telepon'];
 
-    protected array $casts      = [
-        'id_pelanggan' => 'int'
-    ];
+    // protected array $casts      = [
+    //     'id_pelanggan' => 'int'
+    // ];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

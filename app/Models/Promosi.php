@@ -13,9 +13,9 @@ class Promosi extends Model {
     protected $protectFields    = true;
     protected $allowedFields    = ['id_tipe_kamar', 'kode_promosi', 'potongan', 'tanggal_kadaluarsa'];
 
-    protected array $casts      = [
-        'id_promosi' => 'int'
-    ];
+    // protected array $casts      = [
+    //     'id_promosi' => 'int'
+    // ];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

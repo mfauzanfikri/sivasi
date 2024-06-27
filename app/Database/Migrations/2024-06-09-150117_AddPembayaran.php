@@ -23,9 +23,11 @@ class AddPembayaran extends Migration {
                 'type' => 'INT',
                 'constraint' => '12',
                 'unsigned' => true,
+                'null' => true,
             ],
             'tanggal' => [
-                'type' => 'DATE'
+                'type' => 'DATE',
+                'null' => true
             ],
             'jumlah' => [
                 'type' => 'FLOAT',
@@ -39,6 +41,7 @@ class AddPembayaran extends Migration {
             ], 'path_bukti_bayar' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
+                'null' => true
             ]
         ];
 
