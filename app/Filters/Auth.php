@@ -23,7 +23,7 @@ class Auth implements FilterInterface {
      * @return RequestInterface|ResponseInterface|string|void
      */
     public function before(RequestInterface $request, $arguments = null) {
-        if (!session()->get('is_loggedin')) {
+        if (!session()->get('is_loggedin') || (session()->get('user'))) {
             return redirect()->to('/dashboard/login');
         }
     }

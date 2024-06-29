@@ -2,6 +2,12 @@
 
 <?= $this->section('content'); ?>
 
+<?php
+
+use App\Utils\FormatCurrency;
+
+?>
+
 <div class="pagetitle">
     <h1>Laporan</h1>
     <nav>
@@ -19,10 +25,12 @@
                 <div class="card-body">
                     <h2 class="card-title">Filter Cetak Laporan</h2>
 
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        msg
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
+                    <?php if (session()->getFlashdata('warningMsg') !== null) : ?>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <?= session()->getFlashdata('warningMsg') ?>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    <?php endif; ?>
 
                     <div class="row mt-1">
                         <div class="col">
@@ -30,7 +38,7 @@
                                 <div class="row mb-3">
                                     <div class="col-6">
                                         <label for="from" class="form-label">Dari</label>
-                                        <input type="date" min="<?= (new DateTime())->format('Y-m-d') ?>" class="form-control" id="date-from" name="from" required>
+                                        <input type="date" class="form-control" id="date-from" name="from" required>
                                     </div>
                                     <div class="col-6">
                                         <label for="to" class="form-label">Sampai</label>
@@ -54,27 +62,26 @@
 
                     <div class="row mt-1">
                         <div class="col">
-                            <?php
-                            // TODO: display data pembayaran
-                            ?>
                             <table id="data-laporan-table" class="table table-striped" style="width: 100%;">
                                 <thead>
                                     <tr>
                                         <th></th>
-                                        <th>Username</th>
-                                        <th>Nama</th>
-                                        <th>Alamat</th>
-                                        <th>No. Telepon</th>
+                                        <th>ID Pembayaran</th>
+                                        <th>Tanggal Pembayaran</th>
+                                        <th>Nama Pelanggan</th>
+                                        <th>Nama Validator</th>
+                                        <th>Jumlah</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($pembayaran as $p) : ?>
                                         <tr>
                                             <td></td>
-                                            <td><?= $p->username; ?></td>
-                                            <td><?= $p->nama; ?></td>
-                                            <td><?= $p->alamat; ?></td>
-                                            <td><?= $p->no_telepon; ?></td>
+                                            <td>#<?= $p->id_pembayaran; ?></td>
+                                            <td><?= $p->tanggal ?></td>
+                                            <td><?= $p->reservasi->pelanggan->nama; ?> / <?= $p->reservasi->pelanggan->no_telepon ?></td>
+                                            <td><?= $p->validator->nama; ?></td>
+                                            <td><?= FormatCurrency::formatToIDR($p->jumlah) ?></td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>

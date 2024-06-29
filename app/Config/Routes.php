@@ -6,6 +6,16 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
+$routes->get('/login', 'Auth::index');
+$routes->post('/auth', 'Auth::auth');
+$routes->get('/logout', 'Auth::logout');
+$routes->get('/register', 'Auth::register');
+$routes->post('/register/pelanggan', 'Auth::registerPelanggan');
+
+// protected routes
+$routes->group('', ['filter' => 'pelanggan'], static function (RouteCollection $routes) {
+    $routes->get('/reservasi', 'Reservasi::index');
+});
 
 // dashboard
 $routes->group('dashboard', ['namespace' => 'App\Controllers\Dashboard'], static function (RouteCollection $routes) {
@@ -13,7 +23,7 @@ $routes->group('dashboard', ['namespace' => 'App\Controllers\Dashboard'], static
     $routes->get('logout', 'Auth::logout');
     $routes->post('auth', 'Auth::auth');
 
-    // restricted dashboard routes
+    // protected dashboard routes
     $routes->group('', ['filter' => 'auth'], static function (RouteCollection $routes) {
         $routes->get('', 'Home::index');
         $routes->get('data-pelanggan', 'Pelanggan::index');
