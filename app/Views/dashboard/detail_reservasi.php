@@ -56,8 +56,16 @@
                                     <p class="mb-0 rounded border p-1"><?= $reservasi->tanggal ?></p>
                                 </div>
                                 <div>
-                                    <label class="fw-semibold">Tanggal Datang (check in)</label>
+                                    <label class="fw-semibold">Tanggal Mulai</label>
+                                    <p class="mb-0 rounded border p-1"><?= $reservasi->tanggal_mulai ?></p>
+                                </div>
+                                <div>
+                                    <label class="fw-semibold">Tanggal Checkin</label>
                                     <p class="mb-0 rounded border p-1"><?= $reservasi->tanggal_checkin ?></p>
+                                </div>
+                                <div>
+                                    <label class="fw-semibold">Tanggal Checkout</label>
+                                    <p class="mb-0 rounded border p-1"><?= $reservasi->tanggal_checkout ?></p>
                                 </div>
                                 <div>
                                     <label class="fw-semibold">Lama</label>

@@ -19,13 +19,4 @@ class TipeKamar extends Model {
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
-
-    // Validation
-    protected $validationRules      = [
-        'tipe' => 'required|max_length[20]',
-        'harga' => 'required',
-    ];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
 }

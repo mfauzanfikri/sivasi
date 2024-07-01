@@ -19,17 +19,4 @@ class Pembayaran extends Model {
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
-
-    // Validation
-    protected $validationRules      = [
-        'id_reservasi' => 'required|max_length[10]',
-        'id_user' => 'required|max_length[10]',
-        'tanggal' => 'required',
-        'jumlah' => 'required',
-        'status' => 'required|max_length[10]',
-        'path_bukti_bayar' => 'required|max_length[255]',
-    ];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
 }

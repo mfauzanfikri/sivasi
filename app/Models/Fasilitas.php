@@ -19,12 +19,4 @@ class Fasilitas extends Model {
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
-
-    // Validation
-    protected $validationRules      = [
-        'fasilitas' => 'required|max_length[50]'
-    ];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
 }

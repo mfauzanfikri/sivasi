@@ -36,8 +36,8 @@ class AddPembayaran extends Migration {
             ],
             'status' => [
                 'type' => 'VARCHAR',
-                'constraint' => 10,
-                'default' => StatusPembayaran::PROSES
+                'constraint' => 20,
+                'default' => StatusPembayaran::MENUNGGU_PEMBAYARAN
             ], 'path_bukti_bayar' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,

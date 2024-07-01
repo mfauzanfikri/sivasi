@@ -41,8 +41,8 @@
 
                                     foreach ($reservasi as $r) : ?>
                                         <?php
-                                        $tanggalInap = new DateTime($r->tanggal_datang);
-                                        $tanggalKeluar = (new DateTime($r->tanggal_datang))->add(new DateInterval('P3D'));
+                                        $tanggalInap = new DateTime($r->tanggal_mulai);
+                                        $tanggalKeluar = (new DateTime($r->tanggal_mulai))->add(new DateInterval('P3D'));
 
                                         $statusColor = 'text-bg-warning';
                                         switch ($r->status) {
@@ -82,7 +82,6 @@
 
 <?= $this->section('script'); ?>
 <script>
-    // table cuti
     const dataReservasiTable = $('#data-reservasi-table').DataTable({
         columnDefs: [{
             searchable: false,

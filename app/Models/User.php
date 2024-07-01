@@ -19,16 +19,6 @@ class User extends Model {
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
 
-    // Validation
-    protected $validationRules      = [
-        'username' => 'required|max_length[15]',
-        'password' => 'required|max_length[64]',
-        'role' => 'required|max_length[10]'
-    ];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
-
     public function findUserByUsername(string $username): UserEntity|null {
         return $this->where('username', $username)->first();
     }

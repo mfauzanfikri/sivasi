@@ -28,6 +28,10 @@ class AddPromosi extends Migration {
             ],
             'tanggal_kadaluarsa' => [
                 'type' => 'DATE'
+            ],
+            'tampilkan' => [
+                'type' => 'BOOLEAN',
+                'default' => false
             ]
         ];
 

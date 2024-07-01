@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Utils\Database\Constants\StatusKamar;
 use CodeIgniter\Model;
 
 class Kamar extends Model {
@@ -20,13 +21,26 @@ class Kamar extends Model {
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
 
-    // Validation
-    protected $validationRules      = [
-        'id_tipe_kamar' => 'required|max_length[10]',
-        'no_kamar' => 'required|max_length[10]',
-        'status' => 'required|max_length[10]',
-    ];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
+    public function getAvailableBetweenDate(string $from, string $to, string|int $tipeKamarId) {
+        $reservasiModel = new Reservasi();
+
+        $kamar = $this->where('id_tipe_kamar', $tipeKamarId)->findAll();
+
+        foreach ($kamar as $k) {
+            $isExist = $reservasiModel
+                ->where('id_kamar', $k->id_kamar)
+                ->groupStart()
+                ->where('tanggal_mulai >=', $from)
+                ->orWhere('tanggal_selesai <=', $from)
+                ->orWhere('tanggal_mulai <=', $to)
+                ->groupEnd()
+                ->first();
+
+            if (!$isExist) {
+                return $k;
+            }
+        }
+
+        return null;
+    }
 }

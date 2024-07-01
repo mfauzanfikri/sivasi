@@ -14,7 +14,8 @@ class Reservasi extends Seeder {
             'id_kamar' => 1,
             'tanggal' => (new DateTime())->format('Y-m-d'),
             'lama' => 3,
-            'tanggal_checkin' => (new DateTime())->add(new DateInterval('P1D'))->format('Y-m-d'),
+            'tanggal_mulai' => (new DateTime())->add(new DateInterval('P1D'))->format('Y-m-d'),
+            'tanggal_selesai' => (new DateTime())->add(new DateInterval('P4D'))->format('Y-m-d'),
             'status' => StatusReservasi::PROSES
         ];
 

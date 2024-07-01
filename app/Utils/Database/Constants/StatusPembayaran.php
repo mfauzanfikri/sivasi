@@ -3,7 +3,8 @@
 namespace App\Utils\Database\Constants;
 
 class StatusPembayaran {
-    const PROSES = 'proses';
+    const MENUNGGU_PEMBAYARAN = 'menunggu pembayaran';
+    const MENUNGGU_KONFIRMASI = 'menunggu konfirmasi';
     const SELESAI = 'selesai';
     const GAGAL = 'gagal';
 }

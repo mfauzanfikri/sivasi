@@ -19,15 +19,4 @@ class Promosi extends Model {
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
-
-    // Validation
-    protected $validationRules      = [
-        'id_tipe_kamar' => 'required|max_length[10]',
-        'kode_promosi' => 'required|max_length[8]',
-        'potongan' => 'required',
-        'tanggal_kadaluarsa' => 'required',
-    ];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
 }

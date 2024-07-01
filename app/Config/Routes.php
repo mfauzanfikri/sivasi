@@ -15,6 +15,10 @@ $routes->post('/register/pelanggan', 'Auth::registerPelanggan');
 // protected routes
 $routes->group('', ['filter' => 'pelanggan'], static function (RouteCollection $routes) {
     $routes->get('/reservasi', 'Reservasi::index');
+    $routes->get('/reservasi/(:num)', 'Reservasi::detail/$1');
+    $routes->post('/reservasi/buat', 'Reservasi::create');
+    $routes->post('/reservasi/pembayaran', 'Reservasi::bayar');
+    $routes->get('/reservasi/pembayaran/(:num)', 'Reservasi::pembayaran/$1');
 });
 
 // dashboard

@@ -4,6 +4,7 @@ namespace App\Database\Migrations;
 
 use App\Utils\Database\Constants\StatusReservasi;
 use CodeIgniter\Database\Migration;
+use CodeIgniter\Database\RawSql;
 
 class AddReservasi extends Migration {
     public function up() {
@@ -25,14 +26,21 @@ class AddReservasi extends Migration {
                 'unsigned' => true,
             ],
             'tanggal' => [
-                'type' => 'DATE'
+                'type' => 'DATE',
             ],
             'lama' => [
                 'type' => 'INT',
-                'constraint' => 3,
+                'constraint' => 3
+            ],
+            'tanggal_mulai' => [
+                'type' => 'DATE'
+            ],
+            'tanggal_selesai' => [
+                'type' => 'DATE'
             ],
             'tanggal_checkin' => [
-                'type' => 'DATE'
+                'type' => 'DATE',
+                'null' => true
             ],
             'tanggal_checkout' => [
                 'type' => 'DATE',

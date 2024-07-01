@@ -10,8 +10,7 @@ class Pembayaran extends Seeder {
     public function run() {
         $data = [
             'id_reservasi' => 1,
-            'jumlah' => 3000000,
-            'status' => StatusPembayaran::PROSES
+            'jumlah' => 3000000
         ];
 
         $this->db->table('pembayaran')->insert($data);
