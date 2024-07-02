@@ -65,6 +65,7 @@ class Auth extends BaseController {
 
     public function logout() {
         session()->remove('user');
+        session()->remove('pelanggan');
         session()->set('is_loggedin', false);
 
         return redirect()->to('/dashboard/login');

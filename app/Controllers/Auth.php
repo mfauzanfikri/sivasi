@@ -27,7 +27,7 @@ class Auth extends BaseController {
         ];
 
         if (!$postData['username'] || !$postData['password']) {
-            session()->setFlashdata('errorMsg', 'Semua field harus diisi.');
+            session()->setFlashdata('error', 'Semua field harus diisi.');
 
             return redirect()->to('/login');
         }
@@ -35,7 +35,7 @@ class Auth extends BaseController {
         $pelanggan = AuthUtil::authenticatePelanggan((string)$postData['username'], (string)$postData['password']);
 
         if (!$pelanggan) {
-            session()->setFlashdata('errorMsg', 'Username atau password salah.');
+            session()->setFlashdata('error', 'Username atau password salah.');
 
             return redirect()->to('/login');
         }
@@ -80,7 +80,7 @@ class Auth extends BaseController {
         ];
 
         if ($postData['password'] !== $postData['konfirmasi_password']) {
-            session()->setFlashdata('errorMsg', 'Konfirmasi password salah.');
+            session()->setFlashdata('error', 'Konfirmasi password salah.');
 
             return redirect()->to('/register');
         }
@@ -88,7 +88,7 @@ class Auth extends BaseController {
         $isExist = $pelangganModel->where('username', $postData['username'])->first();
 
         if ($isExist) {
-            session()->setFlashdata('errorMsg', 'Username sudah digunakan.');
+            session()->setFlashdata('error', 'Username sudah digunakan.');
 
             return redirect()->to('/register');
         }
@@ -103,6 +103,7 @@ class Auth extends BaseController {
 
     public function logout() {
         session()->remove('pelanggan');
+        session()->remove('user');
         session()->set('is_loggedin', false);
 
         return redirect()->to('/');

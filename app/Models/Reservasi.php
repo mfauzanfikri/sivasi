@@ -48,7 +48,7 @@ class Reservasi extends Model {
             ->where('id_tipe_kamar', $kamar->id_tipe_kamar)
             ->first();
 
-        $reservasi->kamar->tipeKamar = $tipeKamar;
+        $reservasi->kamar->tipe_kamar = $tipeKamar;
 
         $pembayaran = $pembayaranModel
             ->where('id_reservasi', $reservasi->id_reservasi)
@@ -93,7 +93,7 @@ class Reservasi extends Model {
                 ->where('id_tipe_kamar', $kamar->id_tipe_kamar)
                 ->first();
 
-            $r->kamar->tipeKamar = $tipeKamar;
+            $r->kamar->tipe_kamar = $tipeKamar;
 
             $pembayaran = $pembayaranModel
                 ->where('id_reservasi', $r->id_reservasi)

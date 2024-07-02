@@ -55,7 +55,6 @@
 
 <?= $this->section('script'); ?>
 <script>
-    // table cuti
     const dataPelangganTable = $('#data-pelanggan-table').DataTable({
         columnDefs: [{
             searchable: false,

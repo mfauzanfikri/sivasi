@@ -26,6 +26,14 @@
             </a>
         </li>
 
+        <!-- data promosi -->
+        <li class="nav-item">
+            <a class="nav-link <?= !str_contains(uri_string(), 'dashboard/data-promosi') ? 'collapsed' : '' ?>" href="/dashboard/data-promosi">
+                <i class="bi bi-percent"></i>
+                <span>Data Promosi</span>
+            </a>
+        </li>
+
         <!-- laporan -->
         <li class="nav-item">
             <a class="nav-link <?= uri_string() !== 'dashboard/laporan' ? 'collapsed' : '' ?>" href="/dashboard/laporan">

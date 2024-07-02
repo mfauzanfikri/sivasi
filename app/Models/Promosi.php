@@ -11,7 +11,7 @@ class Promosi extends Model {
     protected $returnType       = \App\Entities\Promosi::class;
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_tipe_kamar', 'kode_promosi', 'potongan', 'tanggal_kadaluarsa'];
+    protected $allowedFields    = ['id_tipe_kamar', 'kode_promosi', 'potongan', 'tanggal_kadaluarsa', 'tampilkan'];
 
     // protected array $casts      = [
     //     'id_promosi' => 'int'

@@ -31,10 +31,10 @@
                             <p class="text-center small">Log in untuk melakukan reservasi.</p>
                         </div>
 
-                        <?php if (session()->getFlashdata('errorMsg') !== null) : ?>
+                        <?php if (session()->getFlashdata('error') !== null) : ?>
                             <div class="mt-2">
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    <?= session()->getFlashdata('errorMsg') ?>
+                                    <?= session()->getFlashdata('error') ?>
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
                             </div>

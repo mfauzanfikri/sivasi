@@ -35,5 +35,9 @@ $routes->group('dashboard', ['namespace' => 'App\Controllers\Dashboard'], static
         $routes->get('data-reservasi/(:num)', 'Reservasi::detail/$1');
         $routes->get('laporan', 'Laporan::index');
         $routes->get('laporan/cetak', 'Laporan::cetak');
+        $routes->get('data-promosi', 'Promosi::index');
+        $routes->post('data-promosi/tambah', 'Promosi::create');
+        $routes->post('data-promosi/edit', 'Promosi::edit');
+        $routes->post('data-promosi/hapus', 'Promosi::delete');
     });
 });

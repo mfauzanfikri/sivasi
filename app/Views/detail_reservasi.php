@@ -95,7 +95,7 @@ use App\Utils\FormatCurrency;
                     </tr>
                     <tr>
                         <td style="width: 60%;" class="fw-semibold">Tipe Kamar</td>
-                        <td><?= ucwords($reservasi->kamar->tipeKamar->tipe) ?></td>
+                        <td><?= ucwords($reservasi->kamar->tipe_kamar->tipe) ?></td>
                     </tr>
 
                     <!-- data pembayaran -->
